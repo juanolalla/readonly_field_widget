@@ -4,6 +4,12 @@
  * Implements hook_field_widget_info_alter().
  *
  * Applies to readonly widget all field types having a default formatter.
+ *
+ * In ReadonlyWidget::formElement() the field is rendered using its default
+ * formatter as the form element array. This would not work for a field type
+ * that does not provide a default formatter, resulting in a PHP error. For that
+ * reason we are filtering the field types allowed for this widget.
+ *
  */
 function readonly_field_widget_field_widget_info_alter(&$info) {
   $field_types = Drupal::service('plugin.manager.field.field_type')->getDefinitions();
