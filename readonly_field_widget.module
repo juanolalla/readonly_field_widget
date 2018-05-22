@@ -1,20 +1,10 @@
 <?php
 
+use \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
+
 /**
  * Implements hook_field_widget_info_alter().
- *
- * Applies to readonly widget all field types having a default formatter.
- *
- * In ReadonlyWidget::formElement() the field is rendered using its default
- * formatter as the form element array. This would not work for a field type
- * that does not provide a default formatter, resulting in a PHP error. For that
- * reason we are filtering the field types allowed for this widget.
- *
  */
 function readonly_field_widget_field_widget_info_alter(&$info) {
-  $field_types = \Drupal::service('plugin.manager.field.field_type')->getDefinitions();
-  $field_types = array_filter($field_types, function ($item) {
-    return isset($item['default_formatter']);
-  });
-  $info['readonly']['field_types'] = array_keys($field_types);
+  $info['readonly']['field_types'] = ReadonlyWidget::fieldTypes();
 }
