@@ -34,7 +34,7 @@ class ReadonlyWidget extends WidgetBase implements WidgetInterface {
    * that reason we are filtering the field types allowed for this widget.
    *
    * @see readonly_field_widget.module
-   * @see Implements hook_field_widget_info_alter()
+   * @see hook_field_widget_info_alter()
    */
   public static function fieldTypes() {
     $field_types = \Drupal::service('plugin.manager.field.field_type')->getDefinitions();
