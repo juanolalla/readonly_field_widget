@@ -12,7 +12,7 @@
  *
  */
 function readonly_field_widget_field_widget_info_alter(&$info) {
-  $field_types = Drupal::service('plugin.manager.field.field_type')->getDefinitions();
+  $field_types = \Drupal::service('plugin.manager.field.field_type')->getDefinitions();
   $field_types = array_filter($field_types, function ($item) {
     return isset($item['default_formatter']);
   });
