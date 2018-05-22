@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_field_widget_info_alter().
+ *
+ * Applies to readonly widget all field types having a default formatter.
+ */
+function readonly_field_widget_field_widget_info_alter(&$info) {
+  $field_types = Drupal::service('plugin.manager.field.field_type')->getDefinitions();
+  $field_types = array_filter($field_types, function ($item) {
+    return isset($item['default_formatter']);
+  });
+  $info['readonly']['field_types'] = array_keys($field_types);
+}
