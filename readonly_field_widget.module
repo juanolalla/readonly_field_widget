@@ -6,5 +6,5 @@ use \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
  * Implements hook_field_widget_info_alter().
  */
 function readonly_field_widget_field_widget_info_alter(&$info) {
-  $info['readonly']['field_types'] = ReadonlyWidget::fieldTypes();
+  $info['readonly']['field_types'] = ReadonlyWidget::fieldTypes(\Drupal::service('plugin.manager.field.field_type')->getDefinitions());
 }
