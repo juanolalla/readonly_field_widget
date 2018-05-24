@@ -39,7 +39,7 @@ class ReadonlyWidgetTest extends UnitTestCase {
           ],
           'field_type_2' => [
             'other_key' => 'another_value',
-          ]
+          ],
         ],
         ['field_type_1'],
       ],
@@ -51,7 +51,7 @@ class ReadonlyWidgetTest extends UnitTestCase {
           ],
           'field_type_2' => [
             'default_formatter' => 'formatter2',
-          ]
+          ],
         ],
         ['field_type_1', 'field_type_2'],
       ],
@@ -62,7 +62,7 @@ class ReadonlyWidgetTest extends UnitTestCase {
           ],
           'field_type_2' => [
             'other_key' => 'another_value',
-          ]
+          ],
         ],
         [],
       ],
