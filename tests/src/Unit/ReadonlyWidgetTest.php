@@ -14,9 +14,15 @@ use Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
 class ReadonlyWidgetTest extends UnitTestCase {
 
   /**
+   * @covers ::fieldTypes
+   */
+  public function testSomething() {
+
+  }
+
+  /**
    * Test the logic to get the field types with a default formatter.
    *
-   * @covers ::fieldTypes
    * @dataProvider providerTestFieldTypes
    */
   public function testFieldTypes($definitions, $expected) {
