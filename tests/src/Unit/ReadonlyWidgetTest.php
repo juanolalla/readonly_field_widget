@@ -5,30 +5,21 @@ namespace Drupal\Tests\readonly_field_widget\Unit;
 use Drupal\Tests\UnitTestCase;
 use Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
 
+/**
+ * Class ReadonlyWidgetTest
+ *
+ * @coversDefaultClass \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget
+ * @group readonly_field_widget
+ */
 class ReadonlyWidgetTest extends UnitTestCase {
 
   /**
    * Test the logic to get the field types with a default formatter.
    *
-   * @covers \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget::fieldTypes
-   *
+   * @covers ::fieldTypes
    * @dataProvider providerTestFieldTypes
    */
   public function testFieldTypes($definitions, $expected) {
-    /*$definitions = [
-      'field_type_1' => [
-        'other_key' => 'other_value',
-        'default_formatter' => 'formatter1',
-      ],
-      'field_type_2' => [
-        'other_key' => 'another_value',
-      ]
-    ];
-
-    $expected = [
-      'field_type_1',
-    ];*/
-
     $this->assertSame($expected, ReadonlyWidget::fieldTypes($definitions));
   }
 
