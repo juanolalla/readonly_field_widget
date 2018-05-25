@@ -1,6 +1,11 @@
 <?php
 
-use \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
+/**
+ * @file
+ * Hooks to extend the Readonly Field Widget functionality.
+ */
+
+use Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
 
 /**
  * Implements hook_field_widget_info_alter().

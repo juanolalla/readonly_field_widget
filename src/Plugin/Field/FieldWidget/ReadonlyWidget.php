@@ -49,4 +49,5 @@ class ReadonlyWidget extends WidgetBase implements WidgetInterface {
     });
     return array_keys($field_types);
   }
+
 }

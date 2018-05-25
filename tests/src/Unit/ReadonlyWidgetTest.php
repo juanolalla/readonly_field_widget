@@ -6,7 +6,7 @@ use Drupal\Tests\UnitTestCase;
 use Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget;
 
 /**
- * Class ReadonlyWidgetTest
+ * Class ReadonlyWidgetTest.
  *
  * @coversDefaultClass \Drupal\readonly_field_widget\Plugin\Field\FieldWidget\ReadonlyWidget
  * @group readonly_field_widget
@@ -23,6 +23,11 @@ class ReadonlyWidgetTest extends UnitTestCase {
     $this->assertSame($expected, ReadonlyWidget::fieldTypes($definitions));
   }
 
+  /**
+   * Data provider for testFieldTypes().
+   *
+   * @return array
+   */
   public function providerTestFieldTypes() {
     return [
       [
@@ -62,4 +67,5 @@ class ReadonlyWidgetTest extends UnitTestCase {
       ],
     ];
   }
+
 }
