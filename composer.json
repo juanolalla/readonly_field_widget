@@ -1,0 +1,16 @@
+{
+  "name": "drupal/readonly_field_widget",
+  "type": "drupal-module",
+  "description": "Provides a helper widget to display fields in read only mode",
+  "license": "GPL-2.0+",
+  "require-dev": {
+    "cweagans/composer-patches": "^1.6",
+    "behat/mink-selenium2-driver": "1.3.x-dev",
+    "behat/mink-extension": "v2.2",
+    "drupal/coder": "^8.2",
+    "drupal/drupal-extension": "master-dev",
+    "bex/behat-screenshot": "^1.2",
+    "phpmd/phpmd": "^2.6",
+    "phpmetrics/phpmetrics": "^2.3"
+  }
+}

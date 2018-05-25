@@ -33,14 +33,21 @@ class ReadonlyWidget extends WidgetBase implements WidgetInterface {
    * that does not provide a default formatter, resulting in a PHP error. For
    * that reason we are filtering the field types allowed for this widget.
    *
+   * @param array $field_definitions
+   *   An array with all the field types definitions, obtained from:
+   *   \Drupal\Core\Plugin\DefaultPluginManager::getDefinitions().
+   *
+   * @return array
+   *   An array with all the field types allowed to use Readonly Widget.
+   *
    * @see readonly_field_widget.module
    * @see hook_field_widget_info_alter()
    */
-  public static function fieldTypes() {
-    $field_types = \Drupal::service('plugin.manager.field.field_type')->getDefinitions();
-    $field_types = array_filter($field_types, function ($item) {
+  public static function fieldTypes(array $field_definitions) {
+    $field_types = array_filter($field_definitions, function ($item) {
       return isset($item['default_formatter']);
     });
     return array_keys($field_types);
   }
+
 }
