@@ -25,8 +25,6 @@ class ReadonlyWidgetTest extends UnitTestCase {
 
   /**
    * Data provider for testFieldTypes().
-   *
-   * @return array
    */
   public function providerTestFieldTypes() {
     return [
